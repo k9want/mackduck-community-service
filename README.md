@@ -1,5 +1,8 @@
 # Macdcuk(맥주덕후)
 맥주정보 및 해당 맥주를 마신 유저들의 리뷰를 통해 맥주에 대한 정보를 얻는 플랫폼
+
+https://makeus-challenge.notion.site/MackDuck-933cc3600d2e4513a1c36ef5e1b130e5
+
 ### macduck API 명세서
 https://docs.google.com/spreadsheets/d/1tRwMhJRArAWqNEy0TWntaWE7-8S5Bdy79z4XZi_TNLo/edit?usp=sharing
 
