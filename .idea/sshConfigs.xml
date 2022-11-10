@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="13.209.75.234" id="953fd47a-9fad-4576-aa26-9c2944673d48" keyPath="C:\Users\USER\Desktop\AWS\SSAC_Qma.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+      <sshConfig host="3.35.144.146" id="d84c18aa-346a-4fda-bb98-d06766b14bd9" keyPath="C:\Users\USER\Desktop\AWS\MacDuckServer.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+    </configs>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a0c8f1de-4292-4c9b-af5e-064d5108c7c6" name="awsnodejs" url="http://ssacqma.shop">
+        <fileTransfer rootFolder="/var/www/api-server-node-js-final/" accessType="SFTP" host="13.209.75.234" port="22" sshConfigId="953fd47a-9fad-4576-aa26-9c2944673d48" sshConfig="ubuntu@13.209.75.234:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="86870e9b-53fa-4c70-b843-0ee4c04cfd82" name="macduck" url="https://dev.macduck.shop/">
+        <fileTransfer rootFolder="/var/www/dev" accessType="SFTP" host="3.35.144.146" port="22" sshConfigId="d84c18aa-346a-4fda-bb98-d06766b14bd9" sshConfig="ubuntu@3.35.144.146:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="3b4303ca-6253-4ec6-a820-493e4c43b021" name="macduckprod" url="https://prod.macduck.shop/">
+        <fileTransfer rootFolder="/var/www/prod" accessType="SFTP" host="3.35.144.146" port="22" sshConfigId="d84c18aa-346a-4fda-bb98-d06766b14bd9" sshConfig="ubuntu@3.35.144.146:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
