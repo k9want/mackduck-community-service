@@ -97,6 +97,7 @@ https://docs.google.com/spreadsheets/d/1tRwMhJRArAWqNEy0TWntaWE7-8S5Bdy79z4XZi_T
 └── index.js                            # 포트 설정 및 시작 파일                     		      	 
 ```
 
+<br>
 
 ### 📁 Folder Structure
 #### 1️⃣ 프로젝트 구조 개요
@@ -118,6 +119,8 @@ DB ⇨ DAO ⇨ Service/Provider ⇨ Controller ⇨ Route ⇨ Response
 #### 3️⃣ Validation
 * Controller: 값 유무, 길이, 형식 등의 형식적(validation) 처리
 * Provider / Service: DB 존재 여부, 중복 체크 등 의미적(validation) 처리
+
+<br>
 
 ### ☁️ AWS S3 이미지 업로드 처리
 - **사용 기술**: `aws-sdk`, `multer`, `multer-s3`
