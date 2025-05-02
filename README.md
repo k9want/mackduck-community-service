@@ -1,47 +1,75 @@
-# Macdcuk(맥주덕후)
-맥주정보 및 해당 맥주를 마신 유저들의 리뷰를 통해 맥주에 대한 정보를 얻는 플랫폼
+# 🍺 맥주 커뮤니티, 맥덕(맥주덕후)
+
 
 ![맥덕이미지](https://github.com/user-attachments/assets/69484719-4954-4451-8e39-67bd35d5b9a3)
 
+### 🔖 프로젝트 개요
+* 소개 : 국내외 다양한 맥주 정보(약 100종)와 사용자 리뷰를 기반으로, 맥주를 추천하고 경험을 공유할 수 있는 커뮤니티 플랫폼
+* 대상 : 맥주를 추천받고, 기록하고, 취향을 공유하고 싶은 모든 맥주 애호가
 
-https://makeus-challenge.notion.site/MackDuck-933cc3600d2e4513a1c36ef5e1b130e5
+<br>
 
-### macduck API 명세서
+
+### 🔗 주요 기능
+* 맥주 리뷰 시스템: 평점, 리뷰, 사진을 통해 맥주에 대한 정보 공유
+* 미션 기반 뱃지 시스템: 리뷰 작성 등 미션 달성 시 스티커(뱃지) 보상 제공
+* 선호도 통계 확인: 연령대별 맥주 선호도 시각화
+* 맥주 검색 기능: 이름 기반의 빠른 맥주 검색 지원
+* 카카오 소셜 로그인: 간편한 회원가입 및 로그인 연동
+
+<br>
+
+### 📚 기술 스택 
+NodeJs, MySQL, AWS (EC2, RDS, S3), Nginx
+
+<br>
+
+### 💡 주요 성과
+* 디스콰이엇(Disquiet) 기준 실시간 인기 앱 2위 달성
+* 구글 플레이 스토어 1,000+ 다운로드 기록 (현재 서비스 종료)
+
+<br>
+
+### 🌈 What I learn - Job Performace
+* **효율적인 개발 프로세스**
+  * 팀 단위 협업 환경에서 개발 우선순위와 범위 조정의 중요성을 체득
+  * 기능 구현 순서를 명확히 정하고, 점진적으로 개발해 나가는 유연한 개발 방식 학습
+
+* **책임감 있는 개발 리딩 경험 (PM 역할 수행)**
+  * PM으로서 전체 일정 조율, 핵심 기능 정의 및 의사결정 주도
+  * 클라이언트 개발자와 긴밀히 소통하며 API 구조 및 데이터 효율성 고민
+  * 특히 이미지 처리(S3) 및 소셜 로그인 구현과 같은 핵심 기능에 대해 적극적으로 레퍼런스 분석 및 문제 해결
+
+* **원활한 커뮤니케이션 역량**
+  * 기획자와의 협업에서 비개발자 관점에 맞춘 기술 설명과 소통 경험
+  * 팀원 간 명확한 역할 분담 및 피드백 주고받는 과정에서 소통의 중요성 체득
+
+<br>
+
+### 🚀 What I Learned – Technical Skills
+* **서버 개발 및 인프라**
+  * Node.js / MySQL 기반 서버 개발 및 REST API 설계/구현
+  * EC2, RDS, S3, Nginx를 활용한 AWS 인프라 구축 경험
+  * aws-sdk, multer-s3로 이미지 업로드 처리 및 S3 이미지 서버 구성
+
+* **인증 및 보안**
+  * passport, passport-kakao를 활용한 카카오 소셜 로그인 구현
+  * JWT 토큰 기반 인증 처리, 사용자 인증 플로우 설계
+
+* **데이터 처리**
+  * 커서 기반 페이지네이션 도입으로 실시간 리뷰 반영 및 성능 개선
+  * DB 트랜잭션 처리 및 유효성 검증(Validation) 로직 적용
+
+
+<br>
+
+### 🌏 API 명세서
 https://docs.google.com/spreadsheets/d/1tRwMhJRArAWqNEy0TWntaWE7-8S5Bdy79z4XZi_TNLo/edit?usp=sharing
 
-### macduck ERD
-URL : https://aquerytool.com/aquerymain/index/?rurl=3c457a7a-a704-4d40-bfcb-ce33f2bdb284&
-Password : 81gw3d
+<br>
 
 
-### Folder Structure
-- `src`: 메인 로직
-  Beer, User로 나눠 도메인 별로 패키지를 구성하도록 했다.
-- `config` 및 `util` 폴더: 메인 로직은 아니지만 `src` 에서 필요한 부차적인 파일들을 모아놓은 폴더
-- 도메인 폴더 구조
-> Route - Controller - Provider/Service - DAO
-
-- Route: Request에서 보낸 라우팅 처리
-- Controller: Request를 처리하고 Response 해주는 곳. (Provider/Service에 넘겨주고 다시 받아온 결과값을 형식화), 형식적 Validation
-- Provider/Service: 비즈니스 로직 처리, 의미적 Validation 
-- DAO: Query가 작성되어 있는 곳.
-
-### Comparison
-3개 템플릿 모두 다음과 같이 Request에 대해 DB까지 거친 뒤, 다시 Controller로 돌아와 Response 해주는 구조
-> `Request` -> Route -> Controller -> Service/Provider -> DAO -> DB
-
-> DB -> DAO -> Service/Provider -> Controller -> Route -> `Response`
-
-#### Node.js (패키지매니저 = npm)
-> Request(시작) / Response(끝)  ⇄ Router (*Route.js) ⇄ Controller (*Controller.js) ⇄ Service (CUD) / Provider (R) ⇄ DAO (DB)
-
-### Validation
-서버 API 구성의 기본은 Validation을 잘 처리하는 것이라고 생각했다.
-값, 형식, 길이 등의 형식적 Validation은 Controller에서,
-DB에서 검증해야 하는 의미적 Validation은 Provider 혹은 Service에서 처리했다.
-
-
-## ✨Structure
+### ✨Structure
 주요 파일 구조
 ```
 ├── config                              #
@@ -70,7 +98,32 @@ DB에서 검증해야 하는 의미적 Validation은 Provider 혹은 Service에�
 ```
 
 
-### [AWS S3](aws-sdk,multer-s3,multer)
-aws-sdk,multer-s3,multer를 이용해서 클라이언트에서 받은 이미지들을 AWS S3에 넣도록 처리, S3에 이미지를 저장하면서 Url을 DB에도 저장,
-클라이언트에서는 데이터조회 시 이미지 url을 전달한다.
-(이미지를 s3에 저장할 때 파일크기를 줄여서 저장하여 s3 용량 부담을 줄이려고 노력했다.)
+### 📁 Folder Structure
+#### 1️⃣ 프로젝트 구조 개요
+* src: 메인 비즈니스 로직
+  * **Beer, User로 나눠 도메인 별로 패키지를 구성하도록 했다**.
+* config, util: 메인 로직은 아니지만, 설정 파일 및 유틸성 로직을 모아둔 폴더
+  
+#### 2️⃣ 도메인 레이어 구조
+```Request ⇨ Route ⇨ Controller ⇨ Service/Provider ⇨ DAO ⇨ DB
+DB ⇨ DAO ⇨ Service/Provider ⇨ Controller ⇨ Route ⇨ Response
+```
+| 계층 | 역할 |
+| --- | --- |
+| **Route** | 라우팅 처리 (Request 엔드포인트 연결) |
+| **Controller** | 요청 처리 및 응답 포맷 구성, 형식적 Validation |
+| **Provider / Service** | 핵심 비즈니스 로직 처리, 의미적 Validation |
+| **DAO (Data Access Object)** | SQL 쿼리 수행, DB 직접 접근 담당 |
+
+#### 3️⃣ Validation
+* Controller: 값 유무, 길이, 형식 등의 형식적(validation) 처리
+* Provider / Service: DB 존재 여부, 중복 체크 등 의미적(validation) 처리
+
+### ☁️ AWS S3 이미지 업로드 처리
+- **사용 기술**: `aws-sdk`, `multer`, `multer-s3`
+- **기능 흐름**:
+    1. 클라이언트로부터 이미지 파일 수신
+    2. S3에 이미지 저장 후, 해당 **이미지 URL을 DB에 저장**
+    3. 클라이언트에는 DB에 저장된 이미지 URL 전달
+- **최적화 포인트**:
+    - 업로드 시 **파일 크기를 압축**하여 S3 저장 비용 및 네트워크 트래픽 최소화 시도도
