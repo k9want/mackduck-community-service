@@ -25,7 +25,7 @@ NodeJs, MySQL, AWS (EC2, RDS, S3), Nginx
 <br>
 
 ### 💡 주요 성과
-* **디스콰이엇(Disquiet) 기준 실시간 인기 앱 2위 달성**
+* [**디스콰이엇(Disquiet) 기준 실시간 인기 앱 2위 달성**](https://disquiet.io/product/%EB%A7%A5%EB%8D%95)
 * **구글 플레이 스토어 1,000+ 다운로드 기록 (현재 서비스 종료)**
 
 <br>
